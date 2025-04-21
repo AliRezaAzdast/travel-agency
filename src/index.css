@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  --color-light-background: #fffbfb;
   --color-light: #404040;
-  --color-dark-background: #1e1e1e;
   --color-dark: #ffffff;
+  --color-light-background: #fffbfb;
+  --color-dark-background: #1e1e1e;
   --color-primary: #5264ff;
   --color-secondary: #ff782c;
 }
@@ -12,5 +15,9 @@
 @layer utilities {
   .my-container {
     @apply max-w-320 mx-auto px-4;
+  }
+
+  .my-text{
+    @apply text-light dark:text-dark
   }
 }
