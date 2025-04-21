@@ -3,16 +3,19 @@ import React from "react";
 const Hero = () => {
   return (
     <section className="my-container mt-5 relative">
-      <div className="flex justify-between my-text">
+      <div className="flex lg:flex-row flex-col items-center justify-between my-text">
+        {/* right */}
         <div className="flex-1/2 flex flex-col justify-center gap-15">
+         {/* orange part */}
           <div className="bg-secondary/25 border border-secondary w-fit flex items-center gap-3 p-3 rounded-full">
             <img src="/img/icons/beach-sunrise.png" alt="" />
-            <span className="text-sm text-secondary">
+            <span className="lg:text-sm text-xs text-secondary">
               بسیار سفر باید تا پخته شود خامی
             </span>
           </div>
+          {/* big header */}
           <div>
-            <h1 className="text-7xl font-bold w-[527px]">
+            <h1 className="lg:text-7xl text-4xl font-bold text-center lg:text-start lg:w-[527px]">
               دنیا را کشف کنید زندگی را
               <span className="text-primary">تجربه </span>
               کنید
@@ -20,12 +23,13 @@ const Hero = () => {
                 <img
                   src="/img/icons/travelling 1.png"
                   alt=""
-                  className="w-15 h-15 inline-block"
+                  className="lg:w-15 w-9 lg:h-15 h-9 inline-block"
                 />
               </span>
             </h1>
           </div>
-          <div className="flex items-center gap-5">
+          {/* icon texts */}
+          <div className="flex items-center justify-center mb-5 lg:justify-start gap-5">
             <div className="flex flex-col items-center">
               <img
                 src="./img/icons/camp.png"
@@ -60,10 +64,8 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div
-          className="w-[636px] h-[811px] rounded-4xl bg-bottom bg-cover relative"
-          style={{ backgroundImage: 'url("/img/1.png")' }}
-        >
+        {/* left */}
+        <div className="lg:w-[636px] w-full lg:h-[811px] h-[300px] rounded-4xl bg-bottom bg-cover relative" style={{ backgroundImage: 'url("/img/1.png")' }}>
           <div className="flex flex-col gap-5 items-center absolute left-8 top-8">
             <div className="flex flex-col gap-3 bg-white/25 p-8 border border-white rounded-4xl">
               <span className="flex items-center text-white font-bold gap-1">
@@ -125,8 +127,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className=" rounded-full w-250 absolute mx-auto bottom-8 bg-white p-4 dark:bg-dark-background dark:border-white/35 border border-[#404040]/35">
-        <ul className="flex text-xl gap-6 justify-evenly items-center">
+      {/* border wiht seach */}
+      <div className=" rounded-4xl lg:rounded-full w-full lg:w-250 lg:absolute mt-8 mx-auto lg:bottom-8 bg-white p-4 dark:bg-dark-background dark:border-white/35 border border-[#404040]/35">
+        <ul className="flex lg:flex-row flex-col text-xl gap-6 justify-evenly items-center">
           <li className="flex items-center gap-1 my-text">
             <svg
               xmlns="http://www.w3.org/2000/svg"
