@@ -8,6 +8,7 @@
   --color-dark: #ffffff;
   --color-light-background: #fffbfb;
   --color-dark-background: #1e1e1e;
+  --color-dark-40: #404040; 
   --color-primary: #5264ff;
   --color-secondary: #ff782c;
 }
@@ -19,5 +20,8 @@
 
   .my-text{
     @apply text-light dark:text-dark
+  }
+  .my-title-after{
+    @apply after:h-0.5 after:w-20 after:bg-primary after:rounded-full after:absolute after:right-0 after:bottom-0
   }
 }
