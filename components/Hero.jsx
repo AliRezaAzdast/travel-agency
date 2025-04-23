@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="my-container mt-5 relative">
+    <section className="my-container mt-10 relative">
       <div className="flex lg:flex-row flex-col items-center justify-between my-text">
         {/* right */}
         <div className="flex-1/2 flex flex-col justify-center gap-15">
