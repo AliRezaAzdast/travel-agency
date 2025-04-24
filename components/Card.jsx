@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ img, title, date, star, price, off }) => {
+const Card = ({ img, title, date, star, price, off, className }) => {
   const formatPrice = (price) => {
     // Convert English numbers to Persian
     const persianNumbers = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
@@ -12,7 +12,7 @@ const Card = ({ img, title, date, star, price, off }) => {
     return formattedPrice;
   };
   return (
-    <div className="flex flex-col relative bg-white dark:bg-[#1D1D1D] p-3 mt-10 border border-[#404040]/25 dark:border-white/25 rounded-2xl">
+    <div className={`flex flex-col relative bg-white dark:bg-[#1D1D1D] p-3 mt-10 border border-[#404040]/25 dark:border-white/25 rounded-2xl ${className}`}>
       <img src={img} className="w-[381px] h-[260px] rounded-2xl " alt="" />
       <div className="flex w-full mt-2 justify-between items-center">
         <p className="text-[28px] text-dark-40 dark:text-[#FBFBFB] font-semibold">
@@ -46,7 +46,7 @@ const Card = ({ img, title, date, star, price, off }) => {
         <div className="text-[#000000]/70 font-semibold dark:text-[#FBFBFB] text-3xl">
           {formatPrice(price)}
           <span className="text-2xl"> تومان</span>{" "}
-          <span className="text-dark-40 dark:text-[#FBFBFB]/50 text-lg">
+          <span className="text-dark-40/50 dark:text-[#FBFBFB]/50 text-base">
             هر فرد
           </span>
         </div>

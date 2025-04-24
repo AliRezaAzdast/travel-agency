@@ -1,3 +1,4 @@
+import AppBanner from "../components/AppBanner";
 import GridCards from "../components/GridCards";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -12,6 +13,7 @@ function App() {
       <MostPoular/>
       <WhyUs/>
       <GridCards/>
+      <AppBanner/>
     </>
   );
 }

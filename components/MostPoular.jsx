@@ -27,7 +27,8 @@ const MostPoular = () => {
           <Card key={item.id} {...item} />
         ))}
       </div>
-
+      
+        {/* arrow */}
       <div className="w-full mt-8 flex justify-center">
         <div className="flex items-center justify-center bg-[#D3D3D3] p-5 rounded-full w-[56px] h-[56px]">
           <svg
