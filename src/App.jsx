@@ -1,4 +1,5 @@
 import AppBanner from "../components/AppBanner";
+import Comments from "../components/Comments";
 import GridCards from "../components/GridCards";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -14,6 +15,7 @@ function App() {
       <WhyUs/>
       <GridCards/>
       <AppBanner/>
+      <Comments/>
     </>
   );
 }

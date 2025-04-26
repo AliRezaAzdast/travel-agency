@@ -13,4 +13,11 @@ const travels = [
     {id:6 , title: 'تور آنتالیا',img:'/img/4.png', star: '4.1' , date: '3 روز و 4 شب', price: 45000000, off: 0},
 ]
 
-export { mostp, travels } ;
+const comments = [
+    {id:1, username:'سارا محمدی' , userid:'@uharvey' , img:'./img/users/1.png', date:'1403.1.12'},
+    {id:2, username:'تینا حسنی' , userid:'@uharvey' , img:'./img/users/2.png', date:'1403.1.12'},
+    {id:3, username:'مهسا رضایی' , userid:'@uharvey' , img:'./img/users/1.png', date:'1403.1.12'},
+    {id:4, username:'سارا محمدی' , userid:'@uharvey' , img:'./img/users/2.png', date:'1403.1.12'},
+]
+
+export { mostp, travels, comments } ;

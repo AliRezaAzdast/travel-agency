@@ -4,8 +4,8 @@ const AppBanner = () => {
   return (
     <section className='mt-20 mb-20'>
         <div className='my-container'>
-            <div className='w-full flex flex-col items-center justify-center sm:p-20 p-8 relative h-auto sm:h-[336px] rounded-4xl bg-primary sm:bg-[url(./banner-light.png)] sm:dark:bg-[url(./banner-dark.png)] dark:border dark:border-white/25'>
-            <div className='sm:hidden visible h-61 bg-white/25 pl-6 pr-6 rounded-4xl mb-5'>
+            <div className='w-full flex flex-col items-center justify-center sm:p-20 p-8 relative h-auto sm:h-[336px] rounded-4xl bg-primary dark:bg-[#1D1D1D] sm:bg-[url(./banner-light.png)] sm:dark:bg-[url(./banner-dark.png)] dark:border dark:border-white/25'>
+            <div className='sm:hidden visible h-61 bg-white/25 dark:bg-[#D9D9D9]/10 pl-6 pr-6 rounded-4xl mb-5'>
                 <img src="./img/icons/app/banner.png" className='transform -translate-y-20'  alt="" />
             </div>
                 <p className='sm:text-center max-w-[700px] text-[20px] md:text-[32px] font-semibold  md:font-bold text-white'>برنامه سفرکن را دانلود کنید تا از آخرین ویژگی های این برنامه در تلفن همراه بهره مند شوید</p>
