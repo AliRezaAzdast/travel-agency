@@ -1,5 +1,6 @@
 import AppBanner from "../components/AppBanner";
 import Comments from "../components/Comments";
+import Footer from "../components/Footer";
 import GridCards from "../components/GridCards";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -16,6 +17,7 @@ function App() {
       <GridCards/>
       <AppBanner/>
       <Comments/>
+      <Footer/>
     </>
   );
 }
