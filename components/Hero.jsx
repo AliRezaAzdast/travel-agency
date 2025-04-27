@@ -1,13 +1,46 @@
-import React from "react";
+import React,{useRef} from "react";
+import gsap from 'gsap'
+import { useGSAP } from "@gsap/react";
+
 
 const Hero = () => {
+
+  const imageRef = useRef(null)
+  const borderRef = useRef(null)
+
+  useGSAP(() => {
+
+    gsap.from(imageRef.current, {
+      x:-600,
+      opacity:0,
+      duration:3,
+      ease: 'power1'
+    })
+
+    gsap.from(borderRef.current, {
+      x: 600,
+      duration:3,
+      opacity:0,
+      ease: 'power1'
+    })
+
+    gsap.from('.aa', {
+      y: -600,
+      duration:2,
+      opacity:0,
+      stagger: 1,
+      ease: 'power1'
+    })
+  },{})
+
+
   return (
-    <section className="my-container mt-10 relative">
+    <section className="my-container mt-3 relative">
       <div className="flex lg:flex-row flex-col items-center justify-between my-text">
         {/* right */}
-        <div className="flex-1/2 flex flex-col justify-center gap-15">
+        <div  className="flex-1/2 flex flex-col justify-center gap-15">
          {/* orange part */}
-          <div className="bg-secondary/25 border border-secondary w-fit flex items-center gap-3 p-3 rounded-full">
+          <div className="aa bg-secondary/25 border border-secondary w-fit flex items-center gap-3 p-3 rounded-full">
             <img src="/img/icons/beach-sunrise.png" alt="" />
             <span className="lg:text-sm text-xs text-secondary">
               بسیار سفر باید تا پخته شود خامی
@@ -15,9 +48,9 @@ const Hero = () => {
           </div>
           {/* big header */}
           <div>
-            <h1 className="lg:text-7xl text-4xl font-bold text-center lg:text-start lg:w-[527px]">
+            <h1 className="aa lg:text-7xl text-4xl font-bold text-center lg:text-start lg:w-[527px]">
               دنیا را کشف کنید زندگی را
-              <span className="text-primary">تجربه </span>
+              <span className=" text-primary">تجربه </span>
               کنید
               <span className="inline-block align-middle ml-2">
                 <img
@@ -29,7 +62,7 @@ const Hero = () => {
             </h1>
           </div>
           {/* icon texts */}
-          <div className="flex items-center justify-center mb-5 lg:justify-start gap-5">
+          <div className="aa flex items-center justify-center mb-5 lg:justify-start gap-5">
             <div className="flex flex-col items-center">
               <img
                 src="./img/icons/camp.png"
@@ -65,7 +98,7 @@ const Hero = () => {
           </div>
         </div>
         {/* left */}
-        <div className="lg:w-[636px] w-full lg:h-[811px] h-[300px] rounded-4xl bg-bottom bg-cover relative" style={{ backgroundImage: 'url("/img/1.png")' }}>
+        <div ref={imageRef} className="lg:w-[636px] w-full lg:h-[811px] h-[300px] rounded-4xl bg-bottom bg-cover relative" style={{ backgroundImage: 'url("/img/1.png")' }}>
           <div className="flex flex-col gap-5 items-center absolute left-8 top-8">
             <div className="flex flex-col gap-3 bg-white/25 p-8 border border-white rounded-4xl">
               <span className="flex items-center text-white font-bold gap-1">
@@ -128,7 +161,7 @@ const Hero = () => {
         </div>
       </div>
       {/* border wiht seach */}
-      <div className=" rounded-4xl lg:rounded-full w-full lg:w-250 lg:absolute mt-8 mx-auto lg:bottom-8 bg-white p-4 dark:bg-dark-background dark:border-white/35 border border-[#404040]/35">
+      <div ref={borderRef} className=" rounded-4xl lg:rounded-full w-full lg:w-250 lg:absolute mt-8 mx-auto lg:bottom-8 bg-white p-4 dark:bg-dark-background dark:border-white/35 border border-[#404040]/35">
         <ul className="flex lg:flex-row flex-col text-xl gap-6 justify-evenly items-center">
           <li className="flex items-center gap-1 my-text">
             <svg
