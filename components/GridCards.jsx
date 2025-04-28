@@ -1,37 +1,92 @@
 import React from "react";
 import { travels } from "../data/data";
 import Card from "./Card";
+import gsap from 'gsap'
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const GridCards = () => {
+  gsap.registerPlugin(ScrollTrigger)
+  useGSAP(() => {
+    gsap.from('.gc-title-content', {
+      scrollTrigger: {
+        trigger: '.gc-title-content',
+        start: "top 80%",
+        end: "bottom top",
+      },
+      x: 600,
+      stagger:.5,
+      opacity: 0,
+      duration: 1,
+    });
+
+    gsap.from('.gc-title-button', {
+      scrollTrigger: {
+        trigger: '.gc-title-button',
+        start: "top 80%",
+        end: "bottom top",
+      },
+      x: -600,
+      stagger:.5,
+      opacity: 0,
+      duration: 1,
+    });
+
+    gsap.from('.gc-cards', {
+      scrollTrigger: {
+        trigger: '.gc-cards',
+        start: "top 80%",
+        end: "bottom top",
+      },
+      x: -600,
+      stagger:.5,
+      opacity: 0,
+      duration: 1,
+    });
+
+    gsap.from(".gc-arrow", {
+      scrollTrigger: {
+        trigger: ".gc-arrow",
+        start: "top 80%",
+        end: "bottom top",
+      },
+      y: -600,
+      stagger:.5,
+      opacity: 0,
+      duration: 1,
+    });
+    
+
+  })
   return (
     <section className="mt-20">
       <div className="my-container my-text">
         {/* title */}
         <div className="flex justify-between items-center">
-          <div className="flex gap-3 items-center">
-            <h1 className="text-[32px] relative font-bold tracking-tight my-title-after">
+          <div className=" flex gap-3 items-center">
+            <h1 className="gc-title-content text-[32px] relative font-bold tracking-tight my-title-after">
               پرفروش ترین تور ها
             </h1>
-            <img src="/img/icons/boom.png" className="h-4 w-4" alt="" />
+            <img src="/img/icons/boom.png" className="gc-title-content h-4 w-4" alt="" />
             <div className="hidden lg:flex">
               <ul className="flex gap-5">
-                <li className="text-xl font-bold text-dark-40 dark:text-[#FBFBFB] border-b border-dark-background dark:border-[#FBFBFB] pb-2">
+                <li className="gc-title-content text-xl font-bold text-dark-40 dark:text-[#FBFBFB] border-b border-dark-background dark:border-[#FBFBFB] pb-2">
                   <button className="cursor-pointer">همه تور ها</button>
                 </li>
-                <li className="text-xl font-bold text-dark-40/50 dark:text-[#FBFBFB]/50">
+                <li className="gc-title-content text-xl font-bold text-dark-40/50 dark:text-[#FBFBFB]/50">
                   <button className="cursor-pointer">تور ایران</button>
                 </li>
-                <li className="text-xl font-bold text-dark-40/50 dark:text-[#FBFBFB]/50">
+                <li className="gc-title-content text-xl font-bold text-dark-40/50 dark:text-[#FBFBFB]/50">
                   <button className="cursor-pointer">تور اروپا</button>
                 </li>
-                <li className="text-xl font-bold text-dark-40/50 dark:text-[#FBFBFB]/50">
+                <li className="gc-title-content text-xl font-bold text-dark-40/50 dark:text-[#FBFBFB]/50">
                   <button className="cursor-pointer">تور آسیا</button>
                 </li>
               </ul>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <button className="cursor-pointer hidden lg:flex">
+            <button className="gc-title-button cursor-pointer hidden lg:flex">
               <svg
                 width="27"
                 height="27"
@@ -70,7 +125,7 @@ const GridCards = () => {
                 />
               </svg>
             </button>
-            <button className="bg-[#EAEAEA] text-[#404040] rounded-full p-3 font-semibold cursor-pointer">
+            <button className="gc-title-button bg-[#EAEAEA] text-[#404040] rounded-full p-3 font-semibold cursor-pointer">
               دیدن همه
             </button>
           </div>
@@ -137,12 +192,12 @@ const GridCards = () => {
         {/* cards */}
         <div className="flex flex-wrap gap-2 items-center justify-center">
           {travels.map((travel) => (
-            <Card key={travel.id} {...travel} />
+            <Card className='gc-cards' key={travel.id} {...travel} />
           ))}
         </div>
 
         {/* arrow */}
-        <div className="w-full hidden mt-8 sm:flex justify-center">
+        <div className="gc-arrow w-full hidden mt-8 sm:flex justify-center">
           <div className="flex items-center justify-center bg-[#D3D3D3] p-5 rounded-full w-[56px] h-[56px]">
             <svg
               xmlns="http://www.w3.org/2000/svg"

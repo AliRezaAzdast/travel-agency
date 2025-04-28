@@ -10,14 +10,16 @@ import WhyUs from "../components/WhyUs";
 function App() {
   return (
     <>
-      <Header />
-      <Hero/>
-      <MostPoular/>
-      <WhyUs/>
-      <GridCards/>
-      <AppBanner/>
-      <Comments/>
-      <Footer/>
+      <div className="overflow-hidden">
+        <Header />
+        <Hero />
+        <MostPoular />
+        <WhyUs />
+        <GridCards />
+        <AppBanner />
+        <Comments />
+        <Footer />
+      </div>
     </>
   );
 }
