@@ -1,14 +1,55 @@
 import React from "react";
 import CommentCard from "./CommentCard";
 import { comments } from "../data/data";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Comments = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    gsap.from(".c-text", {
+      scrollTrigger: {
+        trigger: ".c-text",
+        start: "top 80%",
+        end: "bottom top",
+      },
+      x: 600,
+      opacity: 0,
+      duration: 1,
+    });
+
+    gsap.from('.c-card', {
+      scrollTrigger: {
+        trigger: '.c-card',
+        start: "top 80%",
+        end: "bottom top",
+      },
+      y: -600,
+      stagger:.5,
+      opacity: 0,
+      duration: 1,
+    });
+    gsap.from(".c-btn", {
+      scrollTrigger: {
+        trigger: ".c-btn",
+        start: "top 90%",
+      },
+      x: 600,      
+      opacity: 0, 
+      duration: 2, 
+      ease: "power3.out"
+    });
+
+  },{scope:"#comments"});
+
   return (
-    <section className="mt-20 relative">
+    <section id="comments" className="mt-20 relative">
       <div className="my-container my-text">
         {/* title */}
         <div className="flex justify-between items-center">
-          <div className="flex gap-1 items-center">
+          <div className="c-text flex gap-1 items-center">
             <h1 className="text-[32px] relative font-bold tracking-tight my-title-after">
               نظرات
             </h1>
@@ -27,14 +68,15 @@ const Comments = () => {
         </div>
         <div className="flex flex-col gap-4 mt-5 h-170 overflow-hidden relative">
           {comments.map((comment) => (
-            <CommentCard key={comment.id} {...comment} />
+            <CommentCard className='c-card' key={comment.id} {...comment} />
           ))}
 
           {/* fade effect */}
           <div className="absolute bottom-0 left-0 right-0 h-50 bg-gradient-to-t from-white dark:from-dark-background to-transparent pointer-events-none" />
-
         </div>
-        <button className="w-full bg-primary text-white font-bold p-3 text-lg rounded-full">دیدن همه</button>
+        <button className="c-btn w-full bg-primary text-white font-bold p-3 text-lg rounded-full">
+          دیدن همه
+        </button>
       </div>
     </section>
   );

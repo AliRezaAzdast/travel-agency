@@ -55,9 +55,8 @@ const GridCards = () => {
       opacity: 0,
       duration: 1,
     });
-    
-
   })
+  
   return (
     <section className="mt-20">
       <div className="my-container my-text">

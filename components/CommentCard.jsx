@@ -1,8 +1,8 @@
 import React from "react";
 
-const CommentCard = ({username, userid, img, date}) => {
+const CommentCard = ({username, userid, img, date, className}) => {
   return (
-    <div className="flex flex-col border dark:border-[#FBFBFB]/25 border-dark-40/25 dark:bg-[#1D1D1D] bg-white p-5 rounded-4xl">
+    <div className={`flex flex-col border dark:border-[#FBFBFB]/25 border-dark-40/25 dark:bg-[#1D1D1D] bg-white p-5 rounded-4xl ${className}`}>
       <div className="flex items-center gap-1">
         <img
           src={img}
