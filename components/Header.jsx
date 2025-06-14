@@ -1,16 +1,13 @@
-import React, { useState,useRef } from "react";
-import gsap from 'gsap'
+import React, { useState, useRef } from "react";
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-
 
 import ThemeToggle from "./ThemToggleButton";
 
-
-
 const Header = () => {
   const [navShow, setNavShow] = useState(false);
-  const headerLeftItemsRef = useRef(null)
-  const mobileHeaderRef = useRef(null)
+  const headerLeftItemsRef = useRef(null);
+  const mobileHeaderRef = useRef(null);
 
   const showNav = () => {
     setNavShow(true);
@@ -20,27 +17,27 @@ const Header = () => {
   };
 
   useGSAP(() => {
-    gsap.from('.header-items', {
-      duration:3,
+    gsap.from(".header-items", {
+      duration: 3,
       x: 300,
-      opacity:0,
-      ease:'power1'
-    })
+      opacity: 0,
+      ease: "power1",
+    });
 
     gsap.from(headerLeftItemsRef.current, {
-      duration:3,
+      duration: 3,
       x: -300,
-      opacity:0,
-      ease:'power1'
-    })
+      opacity: 0,
+      ease: "power1",
+    });
 
     gsap.from(mobileHeaderRef.current, {
-      duration:2,
+      duration: 2,
       y: -300,
-      opacity:0,
-      ease:'power1'
-    })
-  })
+      opacity: 0,
+      ease: "power1",
+    });
+  });
 
   return (
     <header className="border-b border-light/25 dark:border-dark/25">
@@ -58,16 +55,45 @@ const Header = () => {
               <span>هتل</span>
             </a>
           </li>
-          <li className="header-items">
+          <li className="header-items relative group">
             <a href="#" className="flex items-center">
               <span>تور داخلی</span>
-              <img src="/svg/down.svg" alt="" className="h-6 w-6" />
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                stroke="currentColor"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.0537 10.5L12.7608 15.7929C12.3703 16.1834 11.7371 16.1834 11.3466 15.7929L6.05371 10.5"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
             </a>
+            <div className="hidden absolute top-8 left-0 group-hover:flex items-center justify-center gap-2 border-l-2 border-r-2 border-primary rounded-2xl">
+              
+            </div>
           </li>
           <li className="header-items">
             <a href="#" className="flex items-center">
               <span>تور خارجی</span>
-              <img src="/svg/down.svg" alt="" className="h-6 w-6" />
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                stroke="currentColor"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.0537 10.5L12.7608 15.7929C12.3703 16.1834 11.7371 16.1834 11.3466 15.7929L6.05371 10.5"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
             </a>
           </li>
           <li className="header-items">
@@ -77,7 +103,17 @@ const Header = () => {
           </li>
 
           <li className="header-items">
-            <img src="/svg/search-normal.svg" alt="" />
+            <svg
+              width="25"
+              height="24"
+              viewBox="0 0 25 24"
+              stroke="currentColor"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 21.75C6.35 21.75 1.75 17.15 1.75 11.5C1.75 5.85 6.35 1.25 12 1.25C17.65 1.25 22.25 5.85 22.25 11.5C22.25 17.15 17.65 21.75 12 21.75ZM12 2.75C7.17 2.75 3.25 6.68 3.25 11.5C3.25 16.32 7.17 20.25 12 20.25C16.83 20.25 20.75 16.32 20.75 11.5C20.75 6.68 16.83 2.75 12 2.75Z" />
+              <path d="M22.5004 22.7499C22.3104 22.7499 22.1204 22.6799 21.9704 22.5299L19.9704 20.5299C19.6804 20.2399 19.6804 19.7599 19.9704 19.4699C20.2604 19.1799 20.7404 19.1799 21.0304 19.4699L23.0304 21.4699C23.3204 21.7599 23.3204 22.2399 23.0304 22.5299C22.8804 22.6799 22.6904 22.7499 22.5004 22.7499Z" />
+            </svg>
           </li>
         </ul>
         <div ref={headerLeftItemsRef} className="flex items-center gap-3">
@@ -96,7 +132,10 @@ const Header = () => {
       </div>
 
       {/* mobile header */}
-      <div ref={mobileHeaderRef} className="my-container flex lg:hidden items-center text-light dark:text-dark justify-between py-4">
+      <div
+        ref={mobileHeaderRef}
+        className="my-container flex lg:hidden items-center text-light dark:text-dark justify-between py-4"
+      >
         {/* dark & light them buttom */}
         <ThemeToggle />
         {/* logo & title */}
@@ -162,37 +201,39 @@ const Header = () => {
               <a href="#" className="flex items-center">
                 <span>تور داخلی</span>
                 <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"
-              />
-            </svg>              </a>
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>{" "}
+              </a>
             </li>
             <li>
               <a href="#" className="flex items-center">
                 <span>تور خارجی</span>
                 <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"
-              />
-            </svg>              </a>
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>{" "}
+              </a>
             </li>
             <li>
               <a href="#">

@@ -163,7 +163,7 @@ const Hero = () => {
       {/* border wiht seach */}
       <div ref={borderRef} className=" rounded-4xl lg:rounded-full w-full lg:w-250 lg:absolute mt-8 mx-auto lg:bottom-8 bg-white p-4 dark:bg-dark-background dark:border-white/35 border border-[#404040]/35">
         <ul className="flex lg:flex-row flex-col text-xl gap-6 justify-evenly items-center">
-          <li className="flex items-center gap-1 my-text">
+          <li className="flex items-center gap-1 my-text cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -200,7 +200,7 @@ const Hero = () => {
               />
             </svg>
           </li>
-          <li className="flex items-center gap-1 my-text">
+          <li className="flex items-center gap-1 my-text cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -231,7 +231,7 @@ const Hero = () => {
               />
             </svg>
           </li>
-          <li className="flex items-center gap-1 my-text">
+          <li className="flex items-center gap-1 my-text cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -262,7 +262,7 @@ const Hero = () => {
               />
             </svg>
           </li>
-          <li className="flex items-center gap-1 my-text">
+          <li className="flex items-center gap-1 my-text cursor-pointer">
             <svg
               width="25"
               height="25"
@@ -295,7 +295,7 @@ const Hero = () => {
             </svg>
           </li>
           <li>
-            <button className="bg-primary rounded-full text-white text-xl font-semibold px-10 py-3">جستجو</button>
+            <button className="bg-primary rounded-full text-white text-xl font-semibold px-10 py-3 cursor-pointer">جستجو</button>
           </li>
         </ul>
       </div>
