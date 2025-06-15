@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 import ThemeToggle from "./ThemToggleButton";
+import DropDownMneu from "./DropDownMneu";
 
 const Header = () => {
   const [navShow, setNavShow] = useState(false);
@@ -43,7 +44,7 @@ const Header = () => {
     <header className="border-b border-light/25 dark:border-dark/25">
       {/* desktop header */}
       <div className="my-container hidden lg:flex items-center justify-between py-4">
-        <ul className="flex items-center lg:gap-7 text-xl text-light dark:text-dark">
+        <ul className="flex items-center lg:gap-7 text-xl text-light h-full dark:text-dark">
           <li className="header-items">
             <a href="#" className="flex items-center">
               <img src="/logo.png" alt="" className="w-8 h-8" />
@@ -55,47 +56,18 @@ const Header = () => {
               <span>هتل</span>
             </a>
           </li>
-          <li className="header-items relative group">
-            <a href="#" className="flex items-center">
-              <span>تور داخلی</span>
-              <svg
-                width="25"
-                height="25"
-                viewBox="0 0 25 25"
-                stroke="currentColor"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M18.0537 10.5L12.7608 15.7929C12.3703 16.1834 11.7371 16.1834 11.3466 15.7929L6.05371 10.5"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </a>
-            <div className="hidden absolute top-8 left-0 group-hover:flex items-center justify-center gap-2 border-l-2 border-r-2 border-primary rounded-2xl">
-              
-            </div>
-          </li>
-          <li className="header-items">
-            <a href="#" className="flex items-center">
-              <span>تور خارجی</span>
-              <svg
-                width="25"
-                height="25"
-                viewBox="0 0 25 25"
-                stroke="currentColor"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M18.0537 10.5L12.7608 15.7929C12.3703 16.1834 11.7371 16.1834 11.3466 15.7929L6.05371 10.5"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </a>
-          </li>
+
+          <DropDownMneu animationClass={'header-items'} menuTitle={'تور داخلی'} menuItems={[
+            {title:'طهران', href:'#'},
+            {title:'تبریز', href:'#'},
+            {title:'مشهد', href:'#'},
+          ]}/>
+
+           <DropDownMneu animationClass={'header-items'} menuTitle={'تور خارجی'} menuItems={[
+            {title:'ترکیه', href:'#'},
+            {title:'المان', href:'#'},
+            {title:'هاوایی', href:'#'},
+          ]}/>
           <li className="header-items">
             <a href="#">
               <span>بیمه مسافرتی</span>
