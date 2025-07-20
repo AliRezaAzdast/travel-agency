@@ -1,11 +1,11 @@
 import Index from "../pages/Index"
-import Ditail from "../pages/Ditail"
+import Detail from "../pages/Detail"
 import Login from "../pages/Login"
 import Signup from "../pages/Signup"
 
 const routes = [
     {path:'/', element:<Index/>},
-    {path:'/detail', element:<Ditail/>},
+    {path:'/detail', element:<Detail/>},
     {path:'/login', element:<Login/>},
     {path:'/singup', element:<Signup/>},
 ]
