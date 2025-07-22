@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { detailTab, detailTabData } from "../data/data";
+import AccordionItem from "../components/AccordionItem";
+import { detailTab, detailTabData, dayProgram } from "../data/data";
 
 function Detail() {
   const [activeTab, setActiveTab] = useState("بررسی");
@@ -134,7 +135,9 @@ function Detail() {
           <span className="inline-block mt-4 h-0.25 w-full bg-[#40404040]"></span>
           {/* features */}
           <div>
-            <h3 className="text-[20px] text-dark-40 my-4 font-bold">ویژگی ها</h3>
+            <h3 className="text-[20px] text-dark-40 my-4 font-bold">
+              ویژگی ها
+            </h3>
             <div className="my-4 flex gap-x-8 items-center">
               <span className="flex gap-x-2 font-medium">
                 <svg
@@ -210,8 +213,21 @@ function Detail() {
             </div>
           </div>
           <span className="inline-block mt-4 h-0.25 w-full bg-[#40404040]"></span>
-          {/* tour schedule */}
-          <div className="mt-4"></div>
+          {/* tour schedule / accordions */}
+          <div className="mt-4">
+            <h3 className="text-[20px] text-dark-40 my-4 font-bold">
+              برنامه تور (روز به روز)
+            </h3>
+            <div className="mt-4">
+              {dayProgram.map((item, index) => (
+                <AccordionItem
+                  key={index}
+                  title={item.title}
+                  content={item.content}
+                />
+              ))}
+            </div>
+          </div>
         </div>
         {/* left content */}
         <div className="flex-1/3"></div>
