@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export default function AccordionItem({ title, content }) {
+export default function AccordionItem({ title, content, className }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-300">
+    <div className={`border-b border-gray-300 ${className}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center p-4 text-left hover:bg-gray-100"
+        className="w-full flex justify-between items-center p-4 text-left rounded-t-3xl hover:bg-gray-100"
       >
         <span className="font-medium">{title}</span>
         <svg
@@ -27,7 +27,7 @@ export default function AccordionItem({ title, content }) {
         </svg>
       </button>
       {isOpen && (
-        <div className="p-4 text-sm text-gray-600 bg-gray-50">{content}</div>
+        <div className="p-4 text-sm text-gray-600 bg-gray-50 rounded-b-3xl">{content}</div>
       )}
     </div>
   );

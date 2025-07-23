@@ -48,7 +48,7 @@ function Detail() {
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-6"
+              className="size-6"
             >
               <path
                 stroke-linecap="round"
@@ -62,7 +62,7 @@ function Detail() {
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-6"
+              className="size-6"
             >
               <path
                 stroke-linecap="round"
@@ -80,7 +80,7 @@ function Detail() {
         </div>
       </div>
       {/* right and left content */}
-      <div className="flex justify-between mt-5">
+      <div className="flex justify-between mt-5 gap-x-8">
         {/* right content */}
         <div className="flex-2/3">
           {/* header part start */}
@@ -230,7 +230,223 @@ function Detail() {
           </div>
         </div>
         {/* left content */}
-        <div className="flex-1/3"></div>
+        <div className="flex-1/3 border border-[#40404040] rounded-4xl bg-white p-6">
+          {/* header with off and price */}
+          <div className="flex items-center justify-between">
+            <span className="bg-[#FF6588] text-white text-xl rounded-3xl px-6 py-1">
+              20%
+            </span>
+            <p className="font-semibold text-2xl">45.000.000 تومان/هرفرد</p>
+          </div>
+
+          <span className="inline-block w-full h-0.25 bg-[#40404040]"></span>
+          {/* start adn finish time */}
+          <div className="flex flex-col items-center gap-y-5 mt-4">
+            <div className="flex items-center justify-around w-full font-bold text-sm">
+              <p>تاریخ شروع</p>
+              <p>تاریخ اتمام </p>
+            </div>
+            <div className="flex items-center justify-around w-full text-[20px]">
+              <span className="flex items-center gap-x-2 bg-[#F5F6FA] px-6 py-3 rounded-full">
+                <p>۱۴۰۳/۱/۱۲</p>
+                <svg
+                  width="25"
+                  height="24"
+                  viewBox="0 0 25 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.5 12C2.5 8.22876 2.5 6.34315 3.67157 5.17157C4.84315 4 6.72876 4 10.5 4H14.5C18.2712 4 20.1569 4 21.3284 5.17157C22.5 6.34315 22.5 8.22876 22.5 12V14C22.5 17.7712 22.5 19.6569 21.3284 20.8284C20.1569 22 18.2712 22 14.5 22H10.5C6.72876 22 4.84315 22 3.67157 20.8284C2.5 19.6569 2.5 17.7712 2.5 14V12Z"
+                    stroke="#404040"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M7.5 4V2.5"
+                    stroke="#404040"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M17.5 4V2.5"
+                    stroke="#404040"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M9.5 14.5L11 13V17"
+                    stroke="#404040"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M13.5 16V14C13.5 13.4477 13.9477 13 14.5 13C15.0523 13 15.5 13.4477 15.5 14V16C15.5 16.5523 15.0523 17 14.5 17C13.9477 17 13.5 16.5523 13.5 16Z"
+                    stroke="#404040"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M3 9H22"
+                    stroke="#404040"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+
+              <span className="flex items-center gap-x-2 bg-[#F5F6FA] px-6 py-3 rounded-full">
+                <p>۱۴۰۳/۱/۱۸</p>
+                <svg
+                  width="25"
+                  height="24"
+                  viewBox="0 0 25 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.5 12C2.5 8.22876 2.5 6.34315 3.67157 5.17157C4.84315 4 6.72876 4 10.5 4H14.5C18.2712 4 20.1569 4 21.3284 5.17157C22.5 6.34315 22.5 8.22876 22.5 12V14C22.5 17.7712 22.5 19.6569 21.3284 20.8284C20.1569 22 18.2712 22 14.5 22H10.5C6.72876 22 4.84315 22 3.67157 20.8284C2.5 19.6569 2.5 17.7712 2.5 14V12Z"
+                    stroke="#404040"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M7.5 4V2.5"
+                    stroke="#404040"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M17.5 4V2.5"
+                    stroke="#404040"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M9.5 14.5L11 13V17"
+                    stroke="#404040"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M13.5 16V14C13.5 13.4477 13.9477 13 14.5 13C15.0523 13 15.5 13.4477 15.5 14V16C15.5 16.5523 15.0523 17 14.5 17C13.9477 17 13.5 16.5523 13.5 16Z"
+                    stroke="#404040"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M3 9H22"
+                    stroke="#404040"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <p className="my-4 font-medium text-sm">تعداد افراد</p>
+          <AccordionItem
+            title={"3 بزرگ سال, 1 کودک"}
+            content={
+              " افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان "
+            }
+            className={"!border-0 bg-[#F5F6FA] rounded-3xl"}
+          />
+
+          <AccordionItem
+            title={"ارسال مدارک مورد نیاز"}
+            content={
+              " افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان "
+            }
+            className={"!border-0 my-4"}
+          />
+
+          <span className="flex items-center justify-between">
+            <p className="my-4 font-medium text-sm">مزایا اضافه</p>
+            <svg
+              width="16"
+              height="1"
+              viewBox="0 0 16 1"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="16"
+                y1="0.5"
+                x2="-4.37114e-08"
+                y2="0.499999"
+                stroke="#404040"
+              />
+            </svg>
+          </span>
+          {/* checkbox boxs */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <label className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  className="form-checkbox h-5 w-5 text-blue-600"
+                />
+                <span className="font-medium text-dark-40">هزینه استخر</span>
+              </label>
+              <p className="font-medium text-dark-40">۹۰۰۰۰ تومان</p>
+            </div>
+            <div className="flex items-center justify-between">
+              <label className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  className="form-checkbox h-5 w-5 text-blue-600"
+                />
+                <span className="font-medium text-dark-40">
+                  هزینه ماساژ هر نفر
+                </span>
+              </label>
+              <p className="font-medium text-dark-40">۲۰۰۰۰۰ تومان</p>
+            </div>
+            <div className="flex items-center justify-between">
+              <label className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  className="form-checkbox h-5 w-5 text-blue-600"
+                />
+                <span className="font-medium text-dark-40">
+                  صبحانه برای هر نفر
+                </span>
+              </label>
+              <p className="font-medium text-dark-40">۶۰۰۰۰ تومان</p>
+            </div>
+          </div>
+          <p className="my-4 font-medium text-sm">هزینه ها</p>
+          {/* price card */}
+          <div className="bg-[#F5F6FA] rounded-4xl py-2 px-4 flex flex-col gap-y-3">
+            <div className="flex justify-between items-center">
+              <p>تور ۷ روزه </p>
+              <p className="font-medium">۱۵۰.۰۰۰.۰۰۰ تومان</p>
+            </div>
+            <div className="flex justify-between items-center">
+              <p>صبحانه برای هر نفر</p>
+              <p className="font-medium">۶۰.۰۰۰ تومان</p>
+            </div>
+            <div className="flex justify-between items-center">
+              <p>هزینه سرویس</p>
+              <p className="font-medium">۶۰.۰۰۰ تومان</p>
+            </div>
+            <div className="flex justify-between items-center">
+              <p>تخفیف 20%</p>
+              <p className="font-medium">۲۰.۰۰۰.۰۰۰- تومان</p>
+            </div>
+          </div>
+
+          <div className="flex justify-between items-center my-6">
+            <p>قیمت نهایی</p>
+            <p className="font-medium">۱۳۰.۰۰۰.۰۰۰ تومان</p>
+          </div>
+
+          <button className="bg-primary w-full cursor-pointer text-white text-2xl py-3 rounded-4xl">
+          رزرو کنید
+          </button>
+        </div>
       </div>
     </div>
   );
