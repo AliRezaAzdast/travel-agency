@@ -169,4 +169,10 @@ const dayProgram = [
   },
 ];
 
-export { mostp, travels, comments, detailTab, detailTabData, dayProgram };
+const checkboxs = [
+  {title: 'هزینه استخر', price:'90000', isActive: false},
+  {title: 'هزینه ماساژ هر نفر', price:'20000', isActive: false},
+  {title: 'صبحانه برای هر نفر', price:'60000', isActive: true},
+]
+
+export { mostp, travels, comments, detailTab, detailTabData, dayProgram, checkboxs };
