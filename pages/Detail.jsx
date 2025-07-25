@@ -5,10 +5,10 @@ import { detailTab, detailTabData, dayProgram, checkboxs } from "../data/data";
 function Detail() {
   const [activeTab, setActiveTab] = useState("بررسی");
 
-
   return (
     <div className="my-container my-text">
-      <div className="flex items-center justify-between mt-5">
+      {/* header desctop */}
+      <div className="items-center justify-between mt-5 hidden md:flex">
         <div>
           <p className="font-semibold text-dark-40 dark:text-white">
             تورخارجی/ تور اروپا/ تور ترکیه/آنتالیا
@@ -34,11 +34,37 @@ function Detail() {
           </button>
         </div>
       </div>
+      {/* header part movile */}
+      <div className="flex md:hidden justify-between items-center mt-4">
+        <h1 className="text-xl font-bold">تور 7 روزه ترکیه/آنتالیا</h1>
+        <span className="bg-gray-100 dark:bg-[#2E2E2E] rounded-full p-3">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-dark-40 dark:text-white"
+          >
+            <path
+              d="M12 7V10M12 10V13M12 10H15M12 10H9M4 21.191V4C4 2.89543 4.89543 2 6 2H18C19.1046 2 20 2.89543 20 4V21.191C20 21.5627 19.6088 21.8044 19.2764 21.6382L12.8944 18.4472C12.3314 18.1657 11.6686 18.1657 11.1056 18.4472L4.72361 21.6382C4.39116 21.8044 4 21.5627 4 21.191Z"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </span>
+      </div>
+      <div className="mt-4 flex md:hidden">
+        <span className="font-medium text-[#40404099] dark:text-white">
+          تور خارجی/ تور اروپا
+        </span>
+      </div>
       {/* header image */}
       <div className="mt-5 relative flex justify-center">
         <img
           src="/img/detail/1.png"
-          className="w-full h-150 object-cover rounded-4xl p-3"
+          className="w-full h-80 md:h-150 object-cover rounded-4xl p-3"
         />
         <div className="absolute flex items-center justify-between gap-x-2 top-5 bg-[#C1C1C133] w-[95%] text-white text-2xl p-3 mt-3 rounded-2xl">
           <div className="flex items-center gap-x-1">
@@ -75,17 +101,23 @@ function Detail() {
           <span className="h-0.25 w-[80%] bg-white rounded-full"></span>
           <p>1/3</p>
         </div>
-        <div className="absolute flex items-center gap-x-3 py-4 px-3 rounded-full bottom-10 left-10 bg-light-background dark:bg-dark-background">
-          <h3 className="font-bold my-text text-[32px]">Türkiye</h3>
-          <img src="/img/detail/flag-1.png" alt="" />
+        <div className="absolute flex items-center gap-x-3 py-1.5 md:py-4 px-2 md:px-3 rounded-full bottom-10 left-10 bg-light-background dark:bg-dark-background">
+          <h3 className="font-bold my-text text-baseh md:text-[32px]">
+            Türkiye
+          </h3>
+          <img
+            src="/img/detail/flag-1.png"
+            className="w-10 md:w-full h-10 md:h-full"
+            alt=""
+          />
         </div>
       </div>
       {/* right and left content */}
       <div className="flex justify-between mt-5 gap-x-8">
         {/* right content */}
-        <div className="flex-2/3">
+        <div className="lg:flex-2/3">
           {/* header part start */}
-          <div className="flex justify-between items-center">
+          <div className="hidden md:flex justify-between items-center">
             <h1 className="text-4xl font-bold">تور 7 روزه ترکیه/آنتالیا</h1>
             <span className="bg-gray-100 dark:bg-[#2E2E2E] rounded-full p-3">
               <svg
@@ -105,14 +137,14 @@ function Detail() {
               </svg>
             </span>
           </div>
-          <div className="mt-4">
+          <div className="hidden md:inline-block mt-4">
             <span className="font-medium text-[#40404099] dark:text-white">
               تور خارجی/ تور اروپا
             </span>
           </div>
           {/* tabbed interface */}
           <div className="mt-4 relative">
-            <div className="flex items-center gap-x-15 font-semibold text-2xl px-3 text-dark-40 dark:text-white">
+            <div className="flex flex-wrap items-center gap-y-3 gap-x-15 font-semibold text-2xl px-3 text-dark-40 dark:text-white">
               {detailTab.map((tab, index) => (
                 <button
                   key={index}
@@ -129,9 +161,15 @@ function Detail() {
                 </button>
               ))}
             </div>
-            <span className="absolute top-10 h-0.25 w-full bg-[#40404040]"></span>
-            <div className="mt-4 text-lg font-medium">
+
+            <div className="mt-4 w-fit line-clamp-6 text-lg font-medium">
               {detailTabData[activeTab]}
+            </div>
+            <div className="flex lg:hidden mt-3 items-center justify-between">
+              <h3 className="text-3xl font-semibold">۴۵.۰۰۰.۰۰۰ تومان</h3>
+              <button className="bg-primary cursor-pointer text-white text-2xl py-3 px-14 rounded-full">
+                رزرو کنید
+              </button>
             </div>
           </div>
           <span className="inline-block mt-4 h-0.25 w-full bg-[#40404040]"></span>
@@ -140,7 +178,7 @@ function Detail() {
             <h3 className="text-[20px] text-dark-40 dark:text-white my-4 font-bold">
               ویژگی ها
             </h3>
-            <div className="my-4 flex gap-x-8 items-center">
+            <div className="my-4 flex flex-wrap gap-8 items-center">
               <span className="flex gap-x-2 font-medium">
                 <svg
                   width="24"
@@ -236,7 +274,7 @@ function Detail() {
           </div>
         </div>
         {/* left content */}
-        <div className="flex-1/3 border border-[#40404040] bg-white dark:bg-dark-background rounded-4xl  p-6">
+        <div className="hidden lg:inline-block flex-1/3 border border-[#40404040] bg-white dark:bg-dark-background rounded-4xl  p-6">
           {/* header with off and price */}
           <div className="flex items-center justify-between">
             <span className="bg-[#FF6588] text-white text-xl rounded-3xl px-6 py-1">
@@ -374,27 +412,30 @@ function Detail() {
           </span>
           {/* checkbox boxs */}
           <div className="space-y-4">
-           {checkboxs.map((checkbox, index) => (
-             <div key={index} className="flex items-center justify-between">
-             <label className="flex items-center space-x-2">
-               <input
-                 type="checkbox"
-                 className="form-checkbox h-5 w-5 text-blue-600"
-               />
-               <span
-                 className={`font-medium text-[#40404040] dark:text-[#ffffff40]  ${checkbox.isActive ? 'text-dark-40 dark:text-white':''}`}
-               >
-                {checkbox.title}
-               </span>
-             </label>
-             <p
-               className={`font-medium text-[#40404040] dark:text-[#ffffff40] ${checkbox.isActive ? 'text-dark-40 dark:text-white':''}`}
-             >
-               {checkbox.price} تومان
-             </p>
-           </div>
-           ))}
-      
+            {checkboxs.map((checkbox, index) => (
+              <div key={index} className="flex items-center justify-between">
+                <label className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    className="form-checkbox h-5 w-5 text-blue-600"
+                  />
+                  <span
+                    className={`font-medium text-[#40404040] dark:text-[#ffffff40]  ${
+                      checkbox.isActive ? "text-dark-40 dark:text-white" : ""
+                    }`}
+                  >
+                    {checkbox.title}
+                  </span>
+                </label>
+                <p
+                  className={`font-medium text-[#40404040] dark:text-[#ffffff40] ${
+                    checkbox.isActive ? "text-dark-40 dark:text-white" : ""
+                  }`}
+                >
+                  {checkbox.price} تومان
+                </p>
+              </div>
+            ))}
           </div>
           <p className="my-4 font-medium text-sm">هزینه ها</p>
           {/* price card */}
